@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}Moje Wpisy{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container text-center">
+    <h1 class="mt-5 mb-4 h4">Moje wszystkie posty</h1>
+
+    {% for post in pagination%}
+    <style>
+        .example-wrapper { margin: 2em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; border-width: 3px; border-style: solid; border-color: black;}
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .wrapper { margin-right: 15px;margin-bottom: 8px;border: 1px solid silver;background: white; padding: 4px;border-radius: 3px;box-shadow: 1px 1px 3px silver; }
+        .title { font-size: font-size: 200px;}
+    </style>
+
+    <div class="container">
+        <div class="row card-body">
+            <div class="col-md-12 ">
+                <div class="wrapper text-center">
+                    <h5 class="title">{{post.title|capitalize}}</h5>
+                    <img src="/images/hosting/{{ post.image }}" class="card-img-top mt-4 image" alt="..." style="width:17cm; height: 5cm">
+                    <div class="container">
+                        <div class="card mt-5">
+                            <div class="card-body ">
+                                <p>{{post.content|length > 200 ? post.content|slice(0, 200) ~ '...' : post.content  }}</p>
+                            </div>
+                            <div class="w3-col m8 s12">
+                                <p><button class="btn btn-light"><b><a   href="{{ path('blog_post', {slug: post.slug }) }}"> Kliknij aby wyświetlić cały tekst »</a></b></button></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="lead">Autor: {{ post.user.userIdentifier }}, {{ post.uploadedAt|date('d.m.Y H:i:s') }}
+                        {% if post.comments|length > 1 or post.comments|length  == 0 %}
+                            Komentarzy: {{ post.comments|length }}
+                        {% else %}
+                            Komentarz: {{ post.comments|length }}
+                        {% endif %}
+
+                        {% if post.votes >= 1 %}
+                            Ocena: +{{ post.votes }}
+                        {% else %}
+                            Ocena: {{ post.votes }}
+                        {% endif %}
+                    <p>
+                    <a href="{{ path('my_post_remove', {'id': post.id}) }}" class="badge badge-danger">Usuń wpis</a>
+                    <a href="{{ url('post.edit', {'id': post.id}) }}" class="badge badge-warning">Edytuj wpis</a>
+                        {% if post.isPublic == '1' %}
+                            <a href="{{ path('my_post_set_visibility', {'id': post.id, 'visibility': '0'}) }}" class="badge badge-primary">Ustaw prywatne</a>
+                        {% else %}
+                            <a href="{{ path('my_post_set_visibility', {'id': post.id, 'visibility': '1'}) }}" class="badge badge-success">Ustaw publiczne</a>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+
+    <div class="container mt-5 navigation text-center>
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+{% endblock %}
