@@ -1,3 +1,4 @@
+
 # Simple Forum
 
 ## What is it?
@@ -27,4 +28,27 @@ The application that I have created provides functionalities that allow you to f
 
 ## Appearance of the application:
 
-blabla
+Homepage:
+![osobazalogowana](https://user-images.githubusercontent.com/45635843/166117678-b1d6adb8-91a4-4faf-bcc0-db5469663ce8.png)
+
+***
+***
+
+Expanded posts tab:
+![zakladkapostyporozwinieciu](https://user-images.githubusercontent.com/45635843/166117680-c52833f4-d5cf-4dd1-ab2f-0926c2552eeb.png)
+
+***
+***
+Expanded tab my posts:
+![mojepostyrozwinieete](https://user-images.githubusercontent.com/45635843/166117669-20b3d941-2658-49ee-850a-1651a81452df.png)
+
+
+***
+***
+![mojewszystkieposty](https://user-images.githubusercontent.com/45635843/166117671-c432d67b-048f-468f-92c7-5715d8ddcd6f.png)
+![najczesciejkomentowanepostyuzytkownikow](https://user-images.githubusercontent.com/45635843/166117674-1093ae41-67d4-4827-b366-7a41ac357c3c.png)
+![najczesciejminusowaneposty](https://user-images.githubusercontent.com/45635843/166117675-31c66613-3837-4928-8ad6-0ad723c2a8bf.png)
+![najczesciejplusowanee](https://user-images.githubusercontent.com/45635843/166117676-8a31086b-ea9d-4520-b706-686357f11e73.png)
+![najnowszepostyuzytkownikow](https://user-images.githubusercontent.com/45635843/166117677-066f17b7-62be-419a-997e-c6c790855329.png)
+
+
