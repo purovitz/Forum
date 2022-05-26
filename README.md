@@ -12,10 +12,6 @@ Posts can be rated negatively or positively by logged in users or commented by e
 In order to search for your posts properly, it is possible to sort your posts according to the results you want to get.
 
 
-## What did I learn creating it?
-
-This is my first symfony application, so I learned a lot while developing it.
-
 
 ## Things that I would like to improve/add in the future:
 
